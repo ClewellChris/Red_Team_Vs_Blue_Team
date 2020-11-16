@@ -92,7 +92,7 @@ Hardening
  - Requiring a complicated password policy of at least 16 characters and utilizing punctuation characters 
 
 ## Kibana Data Captures 
-  Below are screenshots of all the Kibana data collected and used to characterize the attack and create our analysis.  We found that there were 15,353 requests on the /secret_folder/ indicating the Brute Force attack. There were 206 requests on the /webdav folder indicating our ability to connect and upload files. 
+  Below are screenshots of all the Kibana data collected and used to characterize the attack and create our analysis.  We found that there were 15,353 requests on the /secret_folder/ indicating the Brute Force attack. There were 206 requests on the /webdav folder indicating our ability to connect and upload files.  We assessed from the data that our attack began 7:25 P.M.  In conclusion from the data that we acquired we were able to see our attack in progress and with our proposed alarms and mitigation strategies we are confidnet that any similar attacks will be greatly reduced in success.  In addition, given our knowledge of what the data looks like during such an attack our team will be able to stop the attack sooner, hopefully before any sensitve data is accessed. It is recommened that the proposed mitigation strategies and alarms be implemented within 24 hours. 
   
 ![Port Scan](/Kibana/Port_Scan.jpg)
 
