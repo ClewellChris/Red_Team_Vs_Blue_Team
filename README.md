@@ -73,19 +73,23 @@ We navigated to the server's webpage at http://192.168.1.105/ and while searchin
 
 ## Blue Team: Log Analysis, Attack Characterization, Mitigation, and Alarms
   As stated above our Victim machine had Filebeat and Metricbeat installed on the system so that we were able to show an analysis of the attack in progress to adequately set alarms and take the appropriate steps to harden the system from future attacks.  Using ELK we were able to analzye HTTP Data, PORT Data, Response Codes, and Traffic Data. From this data analysis we recommeneded the following Alarms and Hardening: 
-  Alarms 
-    - Notify when there are multiple port scans coming form a singular IP
-    - Notify when the anyone accesses the /secret_folder/ on the server 
-    - Notify when there are more than 10 (401) response codes on any log in on the server
-    - Notify when any IP outside of a proposed white list attempts to access the WebDAV server
-  Hardening
-    - Removal of the /secret_folder/ directory entirely 
-    - Not hosting log in instructions on a public facing webpage 
-    - Create an IP Whitelist allowing only approved IP's to access the server 
-    - Not allowing files to be uploaded from the web interface
-    - Creating a lockout policy with progressive delays to prevent Brute Force attacks but not requiring system administrator intervention for every lockout 
-    - Filtering any open ports so they are more difficult to discover 
-    - Requiring a complicated password policy of at least 16 characters and utilizing punctuation characters 
+ 
+Alarms
+
+ - Notify when there are multiple port scans coming form a singular IP
+ - Notify when the anyone accesses the /secret_folder/ on the server 
+ - Notify when there are more than 10 (401) response codes on any log in on the server
+ - Notify when any IP outside of a proposed white list attempts to access the WebDAV server
+ 
+Hardening
+ 
+ - Removal of the /secret_folder/ directory entirely
+ - Not hosting log in instructions on a public facing webpage 
+ - Create an IP Whitelist allowing only approved IP's to access the server 
+ - Not allowing files to be uploaded from the web interface
+ - Creating a lockout policy with progressive delays to prevent Brute Force attacks but not requiring system administrator intervention for every lockout 
+ - Filtering any open ports so they are more difficult to discover 
+ - Requiring a complicated password policy of at least 16 characters and utilizing punctuation characters 
 
 ## Kibana Data Captures 
   Below are screenshots of all the Kibana data collected and used to characterize the attack and create our analysis.  We found that there were 15,353 requests on the /secret_folder/ indicating the Brute Force attack. There were 206 requests on the /webdav folder indicating our ability to connect and upload files. 
